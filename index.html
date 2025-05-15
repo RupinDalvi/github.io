@@ -3,10 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>R Dalvi's Github Site</title>
+  <title>R Dalvi's GitHub Site</title>
   <style>
     body { font-family: Arial, sans-serif; max-width: 800px; margin: 2rem auto; line-height: 1.6; }
     header { text-align: center; margin-bottom: 2rem; }
+    h2 { margin-top: 1.5rem; }
+    .project { margin-bottom: 2rem; }
+    .project h3 { margin-bottom: 0.3rem; }
+    .project a { font-weight: bold; color: #1867c0; text-decoration: none; }
+    .project a:hover { text-decoration: underline; }
+    .features, .overview { margin-left: 1.2rem; margin-top: 0.3rem; }
+    .features li, .overview li { margin-bottom: 0.3rem; }
+    footer { text-align: center; margin-top: 3rem; color: #666; font-size: 0.9rem; }
   </style>
 </head>
 <body>
@@ -15,12 +23,58 @@
   </header>
   <section>
     <h2>About Me</h2>
-    <p>I am a data scientist at ARC Resources, an oil and gas company in Calgary. This github account is for my personal coding and, perhaps, writing activities.</p>
-    <h2>Projects:</h2>
-    <p>The projects here are likely to be low stakes, fun projects, mostly involving cycling, music or image processing. Occasionally, there may be some articles based on what I have learnt while making these projects.</p>
-    <p>  1. <a href="https://rupindalvi.github.io/cadence-cycle/cadence_cycle.html">Cycling Cadence Conformer</a> </p>
-    
+    <p>I am a data scientist at ARC Resources, an oil and gas company in Calgary. This GitHub account is for my personal coding and, perhaps, writing activities.</p>
+
+    <h2>Projects</h2>
+
+    <div class="project">
+      <h3>1. <a href="https://rupindalvi.github.io/cadence-cycle/cadence_cycle.html">Cycling Cadence Conformer</a></h3>
+      <p><strong>Overview:</strong></p>
+      <ul class="overview">
+        <li>A browser-based prototype that integrates a YouTube video player with real-time cadence feedback via the device’s accelerometer.</li>
+        <li>Adjusts audio volume and emits noise cues when your pedaling RPM deviates from a set target.</li>
+      </ul>
+      <p><strong>Features:</strong></p>
+      <ul class="features">
+        <li>Load and play any YouTube video in-page.</li>
+        <li>Set a desired cadence (RPM) target.</li>
+        <li>Measure pedaling cadence using the device motion sensor.</li>
+        <li>Smooth noisy sensor data with EMA filters and amplitude thresholding.</li>
+        <li>Provide audio feedback by lowering video volume or emitting noise cues.</li>
+        <li>Responsive, mobile-friendly UI with no external dependencies.</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <h3>2. <a href="https://rupindalvi.github.io/gps_power_meter/">Cyclist Power &amp; Speed Tracker</a></h3>
+      <p><strong>Overview:</strong></p>
+      <ul class="overview">
+        <li>A responsive web app that tracks and analyzes cycling power and speed in real-time using GPS or simulation, elevation data, and live wind information.</li>
+        <li>Includes an “Auto Pose” mode to adjust drag area (CdA) automatically based on terrain gradient.</li>
+      </ul>
+      <p><strong>Features:</strong></p>
+      <ul class="features">
+        <li>Samples location, elevation, and wind every 5 seconds for high-resolution hill detection.</li>
+        <li>Physics-based power calculation accounting for gravity, rolling resistance, and aerodynamic drag.</li>
+        <li>Auto Pose option: out-of-saddle (CdA 0.40 m²) on climbs, hoods (0.32 m²) on flats, drops (0.28 m²) on descents.</li>
+        <li>Live display of recent power, speed, gradient, wind, and current CdA.</li>
+        <li>End-of-session summary: average power & speed, calories burned, and total elevation gain.</li>
+        <li>Downloadable CSV of timestamp, GPS coords, altitude, power, speed, CdA, and gradient.</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <h3>3. <a href="https://rupindalvi.github.io/power_meter/">Cycling Power Estimator (Sensor-Only Prototype)</a></h3>
+      <p><strong>Description:</strong></p>
+      <ul class="overview">
+        <li>Uses your phone’s accelerometer and gyroscope to infer small position changes and estimate cycling power without GPS.</li>
+        <li>It’s a fun experiment, but sensor noise and drift quickly accumulate, making real-world accuracy impractical.</li>
+        <li>Provided here as a base for anyone interested in refining sensor-fusion algorithms or filtering techniques.</li>
+      </ul>
+    </div>
+
   </section>
+
   <footer>
     <p>© 2025 R Dalvi</p>
   </footer>
